@@ -1,4 +1,3 @@
-import React from 'react'
 import kaylee from '/kaylee.jpg'
 
 const Profile = () => {
