@@ -11,14 +11,14 @@ interface Props {
     addHue: (color:string) => void
 }
 
-const Main = (props : Props) => {
+const Main = ({hues, addHue} : Props) => {
   return (
     <div className='flex flex-wrap w-full justify-center gap-8 overflow-y-auto'>
 
-        <PostHue addHue={props.addHue}/>
+        <PostHue addHue={addHue}/>
 
 
-        {props.hues.map(  (hue) => ( 
+        {hues.map( (hue) => ( 
             
             <Hue hue={hue}/>
        ))}
