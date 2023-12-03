@@ -1,7 +1,8 @@
 const Header = () => {
   return (
-    <div className="flex flex-row justify-around  p-8">
+    <div className="flex flex-row justify-around p-8">
       <div className="flex flex-row">
+        <img src="paint.png" className="mr-3 max-md:hidden"></img>
         <h1 className="text-gray-500 text-5xl font-bold">H</h1>
         <h1 className="text-red-500 text-5xl font-bold">u</h1>
         <h1 className="text-green-500 text-5xl font-bold">e</h1>
@@ -15,7 +16,7 @@ const Header = () => {
         type="text"
         name="hue"
         id="hue"
-        className="text-center mt-1 rounded-3xl p-1"
+        className="text-center rounded-3xl"
       />
     </div>
   );
