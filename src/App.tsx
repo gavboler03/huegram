@@ -30,7 +30,7 @@ function App() {
   };
 
   return (
-    <div className="flex bg-slate-800 h-screen">
+    <div className="flex bg-slate-800 h-screen overflow-hidden">
       {/* <Menu /> */}
 
       <Main hues={hues} addHue={addNewHue} />

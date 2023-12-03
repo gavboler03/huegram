@@ -1,3 +1,4 @@
+import heart from "/heart.png";
 
 interface HueObject {
   color: string;
@@ -9,24 +10,19 @@ interface Props {
   hue: HueObject;
 }
 
-function getTextColor(backgroundColor:string): string
-{
-
-  return "black";
-}
-
 const Hue = (props: Props) => {
   return (
     <div
-      className="flex flex-col h-64 aspect-square rounded-3xl text-center justify-between items-center"
+      className="flex flex-col h-64 aspect-square rounded-3xl text-center justify-between items-center shadow-black shadow-md"
       style={{ backgroundColor: props.hue.color }}
     >
-      <p className={`text-${getTextColor(props.hue.color)} text-2xl opacity-80`}>{props.hue.color}</p>
+      <div className="bg-gray-900 text-white flex w-full text-center justify-center p-4 rounded-t-2xl">
+        <p className="text-xl opacity-80 font-bold">{props.hue.color}</p>
+        <img className="ml-8" src={heart} alt="" />
+      </div>
 
-
-      <div className="bg-black text-white flex w-full text-center justify-center p-4 rounded-b-2xl">
-        <p className="text-xl">{props.hue.username}</p>
-
+      <div className="bg-gray-900 text-white w-full p-4 rounded-b-2xl">
+        <p className="text-xl font-bold">{props.hue.username}</p>
       </div>
     </div>
   );
