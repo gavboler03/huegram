@@ -3,7 +3,7 @@ import Hue from "./Hue";
 import PostHue from "./PostHue";
 
 interface HueObject {
-  color: string;
+  hex_code: string;
   username: string;
   likes: number;
 }

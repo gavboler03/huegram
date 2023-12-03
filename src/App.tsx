@@ -2,26 +2,39 @@
 import Main from "./components/Main";
 import Profile from "./components/Profile";
 import { useEffect, useState } from "react";
+import axios from "axios";
+
+interface Hues {
+  hex_code: string;
+  username: string;
+  likes: [];
+}
 
 function App() {
-  const [hues, setHues] = useState([]);
+  const [hues, setHues] = useState<Hues[]>([]);
 
   const [currentUser] = useState({
     username: "kavery",
-    likes: 58,
-    hues: [{ id: 36, color: "#ffa510", username: "kavery", likes: 15 }],
+    likes: [58],
+    hues: [{ hex_code: "#ffa510", username: "kavery", likes: [15] }],
   });
 
-  useEffect(() => {
+  /*useEffect(() => {
     fetch("./sampleData.json")
       .then((res) => res.json())
       .then((data) => setHues(data));
+  }, []);*/
+
+  useEffect(() => {
+    axios
+      .get<Hues[]>("https://greenegunnar.pythonanywhere.com/api/hues/")
+      .then((result) => setHues(result.data));
   }, []);
 
-  const addNewHue = (color: string) => {
-    console.log(color);
+  const addNewHue = (hex_code: string) => {
+    console.log(hex_code);
     const newHue = {
-      color,
+      hex_code,
       username: currentUser.username,
       id: length + 1,
       likes: 0,

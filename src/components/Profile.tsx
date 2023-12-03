@@ -2,7 +2,7 @@ import kaylee from "/kaylee.jpg";
 
 const Profile = () => {
   return (
-    <div className="flex flex-col p-8 items-center text-white mt-14 max-md:hidden">
+    <div className="flex flex-col p-8 items-center text-white mt-24 max-md:hidden">
       <div className="flex w-1/2">
         <img src={kaylee} alt="" className="rounded-full" />
       </div>
