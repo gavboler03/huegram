@@ -7,7 +7,7 @@ import axios from "axios";
 interface Hues {
   hex_code: string;
   username: string;
-  likes: [];
+  likes: number;
 }
 
 function App() {
@@ -15,8 +15,8 @@ function App() {
 
   const [currentUser] = useState({
     username: "kavery",
-    likes: [58],
-    hues: [{ hex_code: "#ffa510", username: "kavery", likes: [15] }],
+    likes: 58,
+    hues: [{ hex_code: "#ffa510", username: "kavery", likes: 15 }],
   });
 
   /*useEffect(() => {
@@ -36,7 +36,6 @@ function App() {
     const newHue = {
       hex_code,
       username: currentUser.username,
-      id: length + 1,
       likes: 0,
     };
     setHues([newHue, ...hues]);
