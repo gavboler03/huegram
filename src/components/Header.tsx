@@ -14,7 +14,13 @@ const Header = () => {
         <h1 className="text-orange-500 text-5xl font-bold">m</h1>
       </div>
 
-      <input type="text" name="hue" id="hue" className="text-center h-9" />
+      <input
+        type="text"
+        name="hue"
+        id="hue"
+        placeholder="Find a post"
+        className="text-center h-9"
+      />
     </div>
   );
 };

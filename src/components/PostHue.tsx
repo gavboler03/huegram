@@ -18,6 +18,7 @@ const PostHue = (props: Props) => {
           name="hue"
           id="hue"
           className="text-center mt-1  p-1"
+          placeholder="Type a hex codes"
           onChange={(event) => setColor(event.target.value)}
         />
 
