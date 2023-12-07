@@ -1,18 +1,14 @@
-import Header from "./Header";
+import HueObject from "../HueObject";
 import Hue from "./Hue";
 import PostHue from "./PostHue";
-
-interface HueObject {
-  hex_code: string;
-  username: string;
-  likes: number;
-}
+import Header from "./Header";
 interface Props {
   hues: HueObject[];
   addHue: (color: string) => void;
+  toggleLike: (id?: number) => void;
 }
 
-const Main = ({ hues, addHue }: Props) => {
+const Main = ({ hues, addHue, toggleLike }: Props) => {
   return (
     <div className="flex flex-col">
       <Header></Header>
@@ -20,7 +16,7 @@ const Main = ({ hues, addHue }: Props) => {
         <PostHue addHue={addHue} />
 
         {hues.map((hue) => (
-          <Hue hue={hue} />
+          <Hue hue={hue} toggleLike={toggleLike} />
         ))}
       </div>
     </div>

@@ -2,50 +2,47 @@
 import Main from "./components/Main";
 import Profile from "./components/Profile";
 import { useEffect, useState } from "react";
-import axios from "axios";
-
-interface Hues {
-  hex_code: string;
-  username: string;
-  likes: number;
-}
+import HueObject from "./HueObject";
 
 function App() {
-  const [hues, setHues] = useState<Hues[]>([]);
-
+  const [hues, setHues] = useState<HueObject[]>([]);
   const [currentUser] = useState({
     username: "kavery",
     likes: 58,
-    hues: [{ hex_code: "#ffa510", username: "kavery", likes: 15 }],
+    hues: [{ id: 36, color: "#ffa510", username: "kavery", likes: 0 }],
   });
 
-  /*useEffect(() => {
+  useEffect(() => {
     fetch("./sampleData.json")
       .then((res) => res.json())
       .then((data) => setHues(data));
-  }, []);*/
-
-  useEffect(() => {
-    axios
-      .get<Hues[]>("https://greenegunnar.pythonanywhere.com/api/hues/")
-      .then((result) => setHues(result.data));
   }, []);
 
-  const addNewHue = (hex_code: string) => {
-    console.log(hex_code);
+  const addNewHue = (color: string) => {
     const newHue = {
-      hex_code,
+      color,
       username: currentUser.username,
+      id: length + 1,
       likes: 0,
+      isLiked: false,
     };
     setHues([newHue, ...hues]);
+  };
+
+  const toggleLike = (id?: number) => {
+    const newHues = [...hues];
+    const hue = newHues.find((h) => h.id == id);
+    if (hue) {
+      hue.isLiked = !hue.isLiked;
+      setHues(newHues);
+    }
   };
 
   return (
     <div className="flex bg-slate-800 h-screen overflow-hidden">
       {/* <Menu /> */}
 
-      <Main hues={hues} addHue={addNewHue} />
+      <Main hues={hues} addHue={addNewHue} toggleLike={toggleLike} />
 
       <Profile />
     </div>
