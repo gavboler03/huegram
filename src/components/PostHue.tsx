@@ -4,7 +4,7 @@ interface Props {
   addHue: (color: string) => void;
 }
 
-const PostHue = (props: Props) => {
+const PostHue = ({ addHue }: Props) => {
   const [color, setColor] = useState("");
 
   return (
@@ -24,8 +24,8 @@ const PostHue = (props: Props) => {
 
         <a
           href="#"
-          onClick={() => props.addHue(color)}
-          className="btn bg-white text-cyan-950 text-center mt-24 text-xl font-bold border-2 border-solid border-black rounded-3xl hover:-translate-y-0.5 shadow-black shadow-sm p-1"
+          onClick={() => addHue(color)}
+          className="btn bg-white text-black text-center mt-24 text-xl font-bold border-2 border-solid border-black rounded-3xl hover:-translate-y-0.5 hover:bg-blue-300 transition duration-150 shadow-black shadow-sm p-1"
         >
           Post
         </a>

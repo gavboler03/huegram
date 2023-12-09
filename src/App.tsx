@@ -9,9 +9,7 @@ function App() {
   const [currentUser] = useState({
     username: "kodom",
     likes: 58,
-    hues: [
-      { id: 7, color: "#ffa510", username: "kodom", likes: 0, isLiked: false },
-    ],
+    hues: [],
   });
 
   useEffect(() => {
@@ -40,15 +38,23 @@ function App() {
     }
   };
 
-  const addUserLike = () => {};
+  const searchHue = (color: string) => {
+    const hue = hues.filter((hue) => hue.color === color);
+    setHues(hue);
+  };
 
   return (
-    <div className="flex bg-slate-800 h-screen overflow-hidden">
+    <div className="flex flex-row bg-slate-800 h-screen overflow-hidden">
       {/* <Menu /> */}
 
-      <Main hues={hues} addHue={addNewHue} toggleLike={toggleLike} />
+      <Main
+        hues={hues}
+        addHue={addNewHue}
+        toggleLike={toggleLike}
+        searchHue={searchHue}
+      />
 
-      <Profile addUserLike={addUserLike} />
+      <Profile hues={hues} />
     </div>
   );
 }
