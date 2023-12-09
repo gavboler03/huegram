@@ -14,9 +14,10 @@ interface Props {
 
 const Main = ({ hues, addHue, toggleLike, searchHue }: Props) => {
   const [color, setColor] = useState("");
+
   return (
     <div className="flex flex-col">
-      <div className="flex flex-row justify-around mt-8 mb-8">
+      <div className="flex flex-row justify-evenly m-8">
         <div className="flex flex-row font">
           <h1 className="text-indigo-500 text-5xl font-bold">#</h1>
           <h1 className="text-gray-500 text-5xl font-bold">H</h1>
@@ -28,7 +29,7 @@ const Main = ({ hues, addHue, toggleLike, searchHue }: Props) => {
           <h1 className="text-orange-500 text-5xl font-bold">m</h1>
         </div>
         <div>
-          <div className="flex flex-row">
+          <div className="flex flex-row mt-2">
             <input
               type="text"
               name="hue"
@@ -48,7 +49,7 @@ const Main = ({ hues, addHue, toggleLike, searchHue }: Props) => {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap w-full justify-center gap-8 overflow-y-auto">
+      <div className="flex flex-row flex-wrap w-full justify-center gap-8 overflow-y-auto">
         <PostHue addHue={addHue} />
         {hues.map((hue) => (
           <Hue hue={hue} toggleLike={toggleLike} />

@@ -1,4 +1,3 @@
-//import Menu from './components/Menu'
 import Main from "./components/Main";
 import Profile from "./components/Profile";
 import { useEffect, useState } from "react";
@@ -39,21 +38,21 @@ function App() {
   };
 
   const searchHue = (color: string) => {
-    const hue = hues.filter((hue) => hue.color === color);
-    setHues(hue);
+    const newHues = [...hues];
+    const hue = newHues.filter((hue) => hue.color === color);
+    if (hue) {
+      setHues(hue);
+    }
   };
 
   return (
-    <div className="flex flex-row bg-slate-800 h-screen overflow-hidden">
-      {/* <Menu /> */}
-
+    <div className="flex flex-row justify-center bg-slate-800 h-screen overflow-hidden">
       <Main
         hues={hues}
         addHue={addNewHue}
         toggleLike={toggleLike}
         searchHue={searchHue}
       />
-
       <Profile hues={hues} />
     </div>
   );

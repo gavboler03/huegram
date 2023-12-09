@@ -25,7 +25,7 @@ const PostHue = ({ addHue }: Props) => {
         <a
           href="#"
           onClick={() => addHue(color)}
-          className="btn bg-white text-black text-center mt-24 text-xl font-bold border-2 border-solid border-black rounded-3xl hover:-translate-y-0.5 hover:bg-blue-300 transition duration-150 shadow-black shadow-sm p-1"
+          className="btn bg-white text-black text-center mt-24 text-xl font-bold rounded-3xl hover:-translate-y-0.5 hover:bg-blue-300 transition duration-150 shadow-black shadow-sm p-1"
         >
           Post
         </a>
