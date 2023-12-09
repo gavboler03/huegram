@@ -19,7 +19,7 @@ const Header = () => {
         name="hue"
         id="hue"
         placeholder="Find a post"
-        className="text-center h-9"
+        className="text-left h-9 w-52 pl-2 pr-2"
       />
     </div>
   );

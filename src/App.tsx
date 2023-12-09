@@ -7,9 +7,11 @@ import HueObject from "./HueObject";
 function App() {
   const [hues, setHues] = useState<HueObject[]>([]);
   const [currentUser] = useState({
-    username: "kavery",
+    username: "kodom",
     likes: 58,
-    hues: [{ id: 36, color: "#ffa510", username: "kavery", likes: 0 }],
+    hues: [
+      { id: 7, color: "#ffa510", username: "kodom", likes: 0, isLiked: false },
+    ],
   });
 
   useEffect(() => {
@@ -22,7 +24,7 @@ function App() {
     const newHue = {
       color,
       username: currentUser.username,
-      id: length + 1,
+      id: hues.length + 1,
       likes: 0,
       isLiked: false,
     };
@@ -38,13 +40,15 @@ function App() {
     }
   };
 
+  const addUserLike = () => {};
+
   return (
     <div className="flex bg-slate-800 h-screen overflow-hidden">
       {/* <Menu /> */}
 
       <Main hues={hues} addHue={addNewHue} toggleLike={toggleLike} />
 
-      <Profile />
+      <Profile addUserLike={addUserLike} />
     </div>
   );
 }

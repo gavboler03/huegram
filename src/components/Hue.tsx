@@ -14,7 +14,10 @@ const Hue = ({ hue, toggleLike }: Props) => {
     >
       <div className="bg-gray-900 text-white flex w-full text-center justify-center p-4 rounded-t-2xl">
         <p className="text-xl opacity-80 font-bold">{hue.color}</p>
-        <button onClick={() => toggleLike(hue.id)} className="ml-6">
+        <button
+          onClick={() => toggleLike && toggleLike(hue.id)}
+          className="ml-6"
+        >
           <PiHeartStraightFill
             class={hue.isLiked ? "text-red-600 text-2xl" : "text-2xl"}
           />
