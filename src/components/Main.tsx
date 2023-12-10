@@ -17,19 +17,19 @@ const Main = ({ hues, addHue, toggleLike, searchHue }: Props) => {
 
   return (
     <div className="flex flex-col">
-      <div className="flex flex-row justify-evenly m-8">
+      <div className="flex flex-row justify-evenly m-8 gap-96 max-lg:gap-0">
         <div className="flex flex-row font">
-          <h1 className="text-indigo-500 text-5xl font-bold">#</h1>
-          <h1 className="text-gray-500 text-5xl font-bold">H</h1>
-          <h1 className="text-red-500 text-5xl font-bold">u</h1>
-          <h1 className="text-green-500 text-5xl font-bold">e</h1>
-          <h1 className="text-blue-500 text-5xl font-bold">g</h1>
-          <h1 className="text-yellow-500 text-5xl font-bold">r</h1>
-          <h1 className="text-purple-500 text-5xl font-bold">a</h1>
-          <h1 className="text-orange-500 text-5xl font-bold">m</h1>
+          <h1 className="text-indigo-500 text-4xl font-bold">#</h1>
+          <h1 className="text-gray-500 text-4xl font-bold">H</h1>
+          <h1 className="text-red-500 text-4xl font-bold">u</h1>
+          <h1 className="text-green-500 text-4xl font-bold">e</h1>
+          <h1 className="text-blue-500 text-4xl font-bold">g</h1>
+          <h1 className="text-yellow-500 text-4xl font-bold">r</h1>
+          <h1 className="text-purple-500 text-4xl font-bold">a</h1>
+          <h1 className="text-orange-500 text-4xl font-bold">m</h1>
         </div>
         <div>
-          <div className="flex flex-row mt-2">
+          <div className="flex flex-row">
             <input
               type="text"
               name="hue"

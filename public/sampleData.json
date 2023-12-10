@@ -4,5 +4,5 @@
     {"id": 3, "color": "#2aaa8a", "username": "bgreen", "likes": 20, "isLiked":false},
     {"id": 4, "color": "#ffff00", "username": "avance", "likes": 200, "isLiked":false},
     {"id": 5, "color": "#ff6747", "username": "awalker", "likes": 13, "isLiked":false},
-    {"id": 6, "color": "#800080", "username": "sflowers", "likes": 14, "isLiked":false} 
+    {"id": 6, "color": "#800080", "username": "sflowers", "likes": 14, "isLiked":false}
 ]

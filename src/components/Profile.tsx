@@ -4,24 +4,23 @@ import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineClose } from "react-icons/md";
 interface Props {
-  hues?: HueObject[];
+  hues: HueObject[];
 }
 
 const Profile = ({ hues }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
-  const newHues = hues?.filter((hue) => hue.username === "kodom");
-  const totalLikes = newHues?.reduce(
-    (accum, hue) => (accum = hue.likes + accum),
-    0
-  );
+  const newHues = hues.filter((hue) => hue.username === "kodom");
+  const [likes] = useState(0);
+  const variable = newHues.map((hue) => (hue.isLiked ? likes + 1 : likes));
+  const thing = variable.reduce((acc, curr) => acc + curr, 0);
 
   return (
     <div className="flex items-start mt-10 mr-10 w-34 max-md:hidden">
       <button onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? (
-          <MdOutlineClose class="text-white" />
+          <MdOutlineClose class="text-white text-2xl hover:text-blue-300 duration-200" />
         ) : (
-          <GiHamburgerMenu class="text-white" />
+          <GiHamburgerMenu class="text-white text-2xl hover:text-blue-300 duration-200" />
         )}
       </button>
       {isOpen && (
@@ -33,7 +32,7 @@ const Profile = ({ hues }: Props) => {
             ))}
           </div>
 
-          <p className="text-4xl font-bold">{totalLikes} likes</p>
+          <p className="text-4xl font-bold"> {thing} likes</p>
 
           <p className="text-4xl font-bold">{newHues?.length} hues</p>
         </div>
